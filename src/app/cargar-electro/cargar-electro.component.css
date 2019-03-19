@@ -1,0 +1,32 @@
+#uploader {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+
+.archivos {
+margin-top: 50px;
+
+}
+
+.dividir {
+border-right: 2px solid #4A638F;
+}
+
+.formulario_datos {
+margin-top: 48px;	
+
+}
+
+
+.boton_guardar{
+float: right;
+}
+
+
+.tamano_imagen {
+	width: 50px;
+	height: 50px;
+}

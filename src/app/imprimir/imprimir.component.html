@@ -1,0 +1,37 @@
+<div class="row ">
+
+  <div class="col-md-12 tabla_pendientes">
+
+    <table class="table table-hover table-dark">
+      <thead>
+        <tr>
+          <th scope="col">Fecha</th>
+          <th scope="col">Urgencia</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Observasión</th>
+          <th scope="col">Opciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let p of electroList | async ">
+          <th scope="row">{{p.fecha | fecha | date: "LLL/MM/yyyy" }}</th>
+          <td>{{p.urgencia}}</td>
+          <td>{{p.nombre}} <td>
+          <td>{{p.obs | slice:0:10}}</td>
+          <td>
+            <button class="btn btn-sm btn-primary achicar-boton boton_imprimir"
+             (click)="imprimir(p)" *ngIf="p.informado === '1'" >Imprimir</button>
+             <button class="btn btn-sm btn-danger achicar-boton "  *ngIf="p.informado === '2'"
+             (click)="confirmar(p)" >Confirmar</button>
+            </td>
+        </tr>
+
+      </tbody>
+    </table>
+
+    </div>
+
+</div>
+
+
+

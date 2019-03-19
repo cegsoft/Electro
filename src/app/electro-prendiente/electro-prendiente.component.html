@@ -1,0 +1,40 @@
+  <div class="row " *ngIf="!llenarInforme">
+
+    <div class="col-md-12 tabla_pendientes">
+
+      <table class="table table-hover table-dark">
+        <thead>
+          <tr>
+            <th scope="col">Fecha</th>
+            <th scope="col">Urgencia</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Observasión</th>
+            <th scope="col">Opciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let p of electroList | async ">
+            <th scope="row">{{p.fecha | fecha | date:"LLL/MM/yyyy"}}</th>
+            <td>{{p.urgencia}}</td>
+            <td>{{p.nombre}}</td>
+            <td>{{p.obs | slice:0:6}}</td>
+            <td><button class="btn btn-sm btn-success achicar-boton separar-btn"
+               (click)="informe(p)" >Informar</button>
+               <button class="btn btn-sm btn-danger achicar-boton"  (click)="eliminar(p)"
+               ><i class="fas fa-trash-alt"></i></button>
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+
+      </div>
+
+  </div>
+
+
+<app-llenar-electro *ngIf="llenarInforme == true"
+
+[electro]='electroSeleccionado' (visible)="cerrarLlenarInforme()">
+
+</app-llenar-electro>

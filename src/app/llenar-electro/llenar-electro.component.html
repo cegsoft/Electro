@@ -1,0 +1,50 @@
+
+        <div class="row distancia">
+
+
+            <div class="col-md-6 ">
+
+              <ngx-image-viewer [src]="image" ></ngx-image-viewer>
+
+            </div>
+
+
+
+            <div class="col-md-6 ">
+
+                <div class="form-group">
+                    <label class="col"> <strong>Nombre </strong><label>{{electro.nombre}}</label></label>
+                    <label class="col"> <strong>Edad </strong><label>{{electro.edad}}</label></label>
+                        </div>
+
+
+                        <div class="form-group  observacion">
+                            <label for="exampleFormControlTextarea1 " class="label-obs">Observación:</label>
+                            <p>{{electro.obs}}</p>
+                          </div>
+
+
+                          <div class="form-group">
+                              <label for="exampleFormControlTextarea1" class="label-informe">Informe del paciente</label>
+                              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                              [(ngModel)]="electro.informe"></textarea>
+                            </div>
+
+
+
+              <div class="col-md-12 panel-botones d-flex">
+
+
+                <button class="btn btn-primary boton ml-auto" (click)="guardar()">Guardar</button>
+                <button class="btn btn-danger " (click)="cancelar()">Cancelar</button>
+
+                </div>
+
+
+            </div>
+
+
+
+          </div>
+
+
